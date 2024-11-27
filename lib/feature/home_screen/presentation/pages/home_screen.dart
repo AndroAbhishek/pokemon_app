@@ -51,6 +51,13 @@ class _HomeScreenState extends State<HomeScreen> {
         ));
   }
 
+  String sendSearchText(String searchText) {
+    if (searchText.contains(' ')) {
+      return searchText.split(' ')[0];
+    }
+    return searchText;
+  }
+
   @override
   void dispose() {
     _scrollController.dispose();
@@ -66,7 +73,8 @@ class _HomeScreenState extends State<HomeScreen> {
           if (value.isNotEmpty) {
             context.read<HomeBloc>().add(
                   SearchPokemonDataEvent(
-                      setName: searchEditingController.text.trim()),
+                      setName:
+                          sendSearchText(searchEditingController.text.trim())),
                 );
           } else {
             clearSearchAndCallMainApi(context);
