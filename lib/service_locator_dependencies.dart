@@ -1,0 +1,12 @@
+import 'package:get_it/get_it.dart';
+import 'package:pokemon_app/feature/home_screen/data/data_source/get_pokemon_details_api_service.dart';
+import 'package:pokemon_app/feature/home_screen/data/repository/fetch_pokemon_repository_impl.dart';
+import 'package:pokemon_app/feature/home_screen/domain/repository/fetch_pokemon_repository.dart';
+import 'package:pokemon_app/feature/home_screen/domain/usecases/fetch_pokemon_data.dart';
+import 'package:pokemon_app/feature/home_screen/domain/usecases/search_pokemon_data.dart';
+import 'package:pokemon_app/feature/home_screen/presentation/bloc/home_bloc.dart';
+import 'core/network/dio_client.dart';
+import 'feature/home_screen/data/data_source/search_pokemon_details_api_service.dart';
+import 'feature/home_screen/data/repository/search_pokemon_repository_impl.dart';
+import 'feature/home_screen/domain/repository/search_pokemon_repsitory.dart';
+part 'service_locator.dart';
