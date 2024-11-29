@@ -74,8 +74,10 @@ class _HomeScreenState extends State<HomeScreen> {
           if (value.isNotEmpty) {
             context.read<HomeBloc>().add(
                   SearchPokemonDataEvent(
-                      setName:
-                          sendSearchText(searchEditingController.text.trim())),
+                    setName: sendSearchText(
+                      searchEditingController.text.trim(),
+                    ),
+                  ),
                 );
           } else {
             clearSearchAndCallMainApi(context);
