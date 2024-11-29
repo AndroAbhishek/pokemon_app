@@ -48,6 +48,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         emit(HomeFailure(failure));
       },
       (success) {
+        debugPrint('Search ${success.count} , ${success.totalCount}');
+        isLastPage = success.count == success.totalCount;
+        debugPrint('lastPage $isLastPage');
         listPokemonData.addAll(success.data);
         emit(HomeSuccess(pokemonData: listPokemonData));
       },
@@ -77,7 +80,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       },
       (success) {
         isLoading = false;
-        isLastPage = success.data.length < event.pageSize;
+        isLastPage = success.page * success.pageSize >= success.totalCount;
         listPokemonData.addAll(success.data);
         currentPage = event.page;
         emit(HomeSuccess(pokemonData: listPokemonData));
