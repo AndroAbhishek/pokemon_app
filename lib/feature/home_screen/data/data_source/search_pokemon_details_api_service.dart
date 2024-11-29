@@ -6,6 +6,7 @@ import '../../../../core/constants/api_urls.dart';
 import '../../../../core/network/dio_client.dart';
 import '../../../../service_locator_dependencies.dart';
 import '../model/model_pokemon/response_api_pokemon_model_data.dart';
+import 'pokemon_isolate_utils.dart';
 
 abstract class SearchPokemonDetailsApiService {
   Future<Either> getSearchPokemonData(
@@ -24,8 +25,10 @@ class SearchPokemonDetailsApiServiceImpl
           'q': 'set.name:${requestSearchPokemon.setName}',
         },
       );
+
+      var parsedResponse = await parsePokemonDataInIsolate(response.data);
       var getSearchPokemonDetailsResponse =
-          ResponseApiPokemonModelData.fromJson(response.data);
+          ResponseApiPokemonModelData.fromJson(parsedResponse);
       return Right(getSearchPokemonDetailsResponse);
     } on DioException catch (e) {
       return left(e.message);

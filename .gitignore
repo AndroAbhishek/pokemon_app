@@ -1,0 +1,33 @@
+# Flutter/Dart
+.dart_tool/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+build/
+ios/Flutter/.generated/
+android/app/src/debug/
+android/app/src/profile/
+android/app/src/androidTest/
+*.iml
+
+# Generated files
+*.class
+*.log
+*.pyc
+*.swp
+*.lock
+.idea/
+.vscode/
+*.DS_Store
+
+# macOS
+.dart_tool/
+build/
+DerivedData/
+.idea/
+*.DS_Store
+*.lock
+*.log
+.flutter-plugins
+.flutter-plugins-dependencies

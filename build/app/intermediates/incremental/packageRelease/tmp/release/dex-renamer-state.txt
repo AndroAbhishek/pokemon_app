@@ -1,4 +1,0 @@
-#Thu Nov 28 00:12:26 IST 2024
-base.0=/Users/abhisheksharma/Documents/Flutter Projects/Pokemon/pokemon_app/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
