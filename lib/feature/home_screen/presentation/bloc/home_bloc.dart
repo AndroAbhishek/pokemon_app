@@ -50,7 +50,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       (success) {
         debugPrint('Search ${success.count} , ${success.totalCount}');
         isLastPage = success.count == success.totalCount;
-        debugPrint('lastPage $isLastPage');
         listPokemonData.addAll(success.data);
         emit(HomeSuccess(pokemonData: listPokemonData));
       },
